@@ -1,0 +1,67 @@
+version: '2'
+services:
+  webserver:
+    container_name: webserver
+    image: jorged104/webserver
+    depends_on:
+      - database    
+    ports:
+      - "80:80"
+    environment:
+      APICONSULTA: 172.18.0.4
+      APIINSERT : 172.18.0.5
+      DB: 172.18.0.2
+    networks:
+      redapp:
+        ipv4_address: 172.18.0.10  
+    entrypoint:
+      - /sbin/entrypoint.sh
+  apiconsultas:
+    container_name: apiconsultas
+    image: jorged104/apiconsultas
+    depends_on:
+      - database    
+    ports:
+      - "8082:80"
+    environment:
+      APICONSULTA: 172.18.0.4
+      APIINSERT : 172.18.0.5
+      DB: 172.18.0.2
+    networks:
+      redapp:
+        ipv4_address: 172.18.0.4
+    entrypoint:
+      - /sbin/entrypoint.sh
+  apiinsert:
+    container_name: apiinsert
+    image: jorged104/apiinsert
+    depends_on:
+      - database
+    ports:
+      - "8083:80"  
+    environment:
+      APICONSULTA: 172.18.0.4
+      APIINSERT : 172.18.0.5
+      DB: 172.18.0.2
+    networks:
+      redapp:
+        ipv4_address: 172.18.0.5
+    entrypoint:
+      - /sbin/entrypoint.sh            
+  database:
+    container_name: database
+    image: jorged104/database
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+     - "3306:3306"
+    networks:
+      redapp:
+        ipv4_address: 172.18.0.2
+networks:
+  redapp:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
