@@ -1,9 +1,7 @@
 FROM jorged104/apache-php
 
-
-WORKDIR /var/www/html
-ADD . /var/www/html
-COPY . /var/www/html
+ADD . /var/www/app/
+COPY . /var/www/app/
 
 WORKDIR /var/www/app/
 
