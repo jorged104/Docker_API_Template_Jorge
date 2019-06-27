@@ -39,7 +39,7 @@
         
         <h4>Insert Datos Api 2</h4>
 
-        <form action=<?php echo "http://".$_ENV["APIINSERT"]."/ApiInsert/index.php";?> method="post">
+        <form action="send.php" method="post">
             <p>Su nombre: <input type="text" name="nombres" id="nombres" /></p>
             <p>Su nombre: <input type="text" name="apellidos" id="apellidos"/></p>
             <p>Su edad: <input type="text" name="edad" id="edad" /></p>
