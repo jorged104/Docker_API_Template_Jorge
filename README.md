@@ -90,7 +90,6 @@ Sistema
  * PHP  7.0
  * Composer (package manager)
 
->Environment depends on the version of PHP.
 
 License
 -------------------
