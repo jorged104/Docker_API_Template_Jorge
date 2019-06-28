@@ -100,7 +100,6 @@ docker run --name webserver -d -p 80:80 \
   jorged104/apache-php
 ```
 
-This will make the development.
 
 Conectar con otros Contenedores
 -------------------
