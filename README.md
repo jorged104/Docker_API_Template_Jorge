@@ -25,6 +25,55 @@ cd Seminario
 docker build -t="webserver" .
 ```
 
+Terraform
+-------------------
+Inicializar las dependencias del archivo en este caso es aws 
+
+```bash
+git clone https://github.com/harias25/Seminario.git
+cd Seminario
+terraform init
+```
+Inicializar aplicacion 
+
+- Colocar su clave ssh donde dice instancia1 con el nombre de su clave en aws y remplazar instancia1.pem por su clave privada
+```bash
+terraform apply
+```
+
+Destruir la instancia y la infrastructura 
+
+```bash
+terraform apply
+```
+
+Docker-Composer
+-------------------
+ *Install 
+ 
+ ```bash
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+ *Comprobar instalacion 
+
+```bash
+docker-compose --version
+```
+*Descargar aplicacion usaremos el archivo docker-compose.yml
+```bash
+git clone https://github.com/harias25/Seminario.git
+cd Seminario
+```
+*Correr docker compose.yml
+
+```bash
+docker-compose up -d
+```
+
+
 Quick Start
 -------------------
 
@@ -71,6 +120,7 @@ Corriendo la aplicacion:
 docker run -it --net redapp --ip 172.18.0.10 \
  --name webserver -d -p 80:80 webserver
 ```
+
 
 
 
