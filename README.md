@@ -12,7 +12,7 @@ Installation
 -------------------
 
  * [Install Docker 1.9+](https://docs.docker.com/installation/) or [askubuntu](http://askubuntu.com/a/473720)
- * Obtener la ultima vercion de la imagen
+ * Obtener la ultima version de la imagen
  
 ```bash
 docker pull jorged104/apache-php
