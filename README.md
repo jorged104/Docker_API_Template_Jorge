@@ -80,7 +80,7 @@ Quick Start
 Correr el contenedor
 
 ```bash
-docker run -it --net redapp --ip 172.18.0.10 --name webserver -d -p 80:80 webserver
+docker run -it --net redapp --ip 172.18.0.10 --name webserver -d -p 80:80 jorged104/webserver
 ```
 
 Para acceder el contenedor 
