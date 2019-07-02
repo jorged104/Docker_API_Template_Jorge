@@ -22,8 +22,6 @@ spec:
     spec:
       containers:
       - image: jorged104/webserver
-        imagePullPolicy: Always
-        name: test
       dnsPolicy: ClusterFirst
 apiVersion: v1
 kind: Service
