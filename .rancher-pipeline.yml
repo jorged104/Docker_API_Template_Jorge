@@ -1,12 +1,5 @@
 stages:
-- name: Crear Imagen
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: jorged/webserver
-      registry: index.docker.io
-- name: Crear en k8s
+- name: Crear 
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
