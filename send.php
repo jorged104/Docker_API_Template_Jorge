@@ -4,7 +4,7 @@
   $apellidos=$_POST['apellidos'];
   $edad=$_POST['edad'];
 $ch = curl_init();
-
+//jorge
 
     
 // definimos la URL a la que hacemos la petición
